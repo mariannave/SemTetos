@@ -1,5 +1,6 @@
 package com.example.marianna.semtetos;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
         this.btnAnunciar = (Button) findViewById(R.id.btnAnunciar);
         this.btnAnuncios = (Button) findViewById(R.id.btnAnuncios);
         this.btnSobre = (Button) findViewById(R.id.btnSobre);
+        this.btnSobre.setOnClickListener(new OnClickBotao());
 
     }
 
@@ -27,7 +29,10 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public void onClick(View v) {
-            
+            if(v.equals(MainActivity.this.btnSobre)) {
+                Intent it = new Intent(MainActivity.this, SobreActivity.class);
+                startActivity(it);
+            }
         }
     }
 }
