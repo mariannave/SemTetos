@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         this.btnAnuncios = (Button) findViewById(R.id.btnAnuncios);
         this.btnSobre = (Button) findViewById(R.id.btnSobre);
         this.btnSobre.setOnClickListener(new OnClickBotao());
+        this.btnAnunciar.setOnClickListener(new OnClickBotao());
 
     }
 
@@ -31,6 +32,9 @@ public class MainActivity extends AppCompatActivity {
         public void onClick(View v) {
             if(v.equals(MainActivity.this.btnSobre)) {
                 Intent it = new Intent(MainActivity.this, SobreActivity.class);
+                startActivity(it);
+            } else if(v.equals(MainActivity.this.btnAnunciar)) {
+                Intent it = new Intent(MainActivity.this, AnunciarActivity.class);
                 startActivity(it);
             }
         }
