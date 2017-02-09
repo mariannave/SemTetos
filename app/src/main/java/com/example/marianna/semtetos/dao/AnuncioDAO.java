@@ -11,10 +11,6 @@ import com.example.marianna.semtetos.model.Anuncio;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Marianna on 08/02/2017.
- */
-
 public class AnuncioDAO {
     private SQLiteDatabase banco;
 
@@ -24,36 +20,33 @@ public class AnuncioDAO {
 
     public void insert(Anuncio anuncio) {
         ContentValues cv = new ContentValues();
-        cv.put("tipoDoAnuncio", anuncio.getTipoDoAnuncio());
+        cv.put("tipo", anuncio.getTipoDoAnuncio());
         cv.put("titulo", anuncio.getTitulo());
         cv.put("descricao", anuncio.getDescricao());
         cv.put("anunciante", anuncio.getAnunciante());
         cv.put("contato", anuncio.getContato());
-        cv.put("imagemURL", anuncio.getImagemURL());
         banco.insert("anuncio", null, cv);
     }
 
-    public List<Anuncio> get(){
+    public List<Anuncio> get() {
         List<Anuncio> lista = new ArrayList<Anuncio>();
-        String colunas[] = {"id", "tipoDoAnuncio", "titulo", "descricao","anunciante", "contato", "imagemURL"};
-        Cursor c = this.banco.query("anuncio",colunas, null, null, null, null, "titulo");
+        String colunas[] = {"id", "tipo", "titulo", "descricao", "anunciante", "contato"};
+        Cursor c = this.banco.query("anuncio", colunas, null, null, null, null, "titulo");
 
-        if(c.getCount() > 0){
+        if (c.getCount() > 0) {
             c.moveToFirst();
 
             do {
-                int id = c.getInt(c.getColumnIndex("codigo"));
-                String tipoDoAnuncio = c.getString(c.getColumnIndex("tipoDoAnuncio"));
+                int id = c.getInt(c.getColumnIndex("id"));
+                String tipoDoAnuncio = c.getString(c.getColumnIndex("tipo"));
                 String titulo = c.getString(c.getColumnIndex("titulo"));
                 String descricao = c.getString(c.getColumnIndex("descricao"));
                 String anunciante = c.getString(c.getColumnIndex("anunciante"));
                 String contato = c.getString(c.getColumnIndex("contato"));
-                String imagemURL = c.getString(c.getColumnIndex("imagemURL"));
-                lista.add(new Anuncio(id,tipoDoAnuncio,titulo, descricao, anunciante, contato, imagemURL));
-            }while(c.moveToNext());
+                //Falta add a imagem
+                lista.add(new Anuncio(id, tipoDoAnuncio, titulo, descricao, anunciante, contato));
+            } while (c.moveToNext());
         }
-
         return lista;
     }
-
 }
