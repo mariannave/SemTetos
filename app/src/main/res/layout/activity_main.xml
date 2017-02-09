@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.marianna.semtetos.MainActivity">
+    tools:context="com.example.marianna.semtetos.activity.MainActivity">
 
     <Button
         android:id="@+id/btnAnunciar"
