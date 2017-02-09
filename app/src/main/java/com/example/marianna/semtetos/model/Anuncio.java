@@ -15,23 +15,21 @@ public class Anuncio {
     private String imagemURL;
 
 
-    public Anuncio(String tipoDoAnuncio, String titulo, String descricao, String anunciante, String contato, String imagemURL) {
+    public Anuncio(String tipoDoAnuncio, String titulo, String descricao, String anunciante, String contato) {
         this.tipoDoAnuncio = tipoDoAnuncio;
         this.titulo = titulo;
         this.descricao = descricao;
         this.anunciante = anunciante;
         this.contato = contato;
-        this.imagemURL = imagemURL;
     }
 
-    public Anuncio(int id, String tipoDoAnuncio, String titulo, String descricao, String anunciante, String contato, String imagemURL) {
+    public Anuncio(int id, String tipoDoAnuncio, String titulo, String descricao, String anunciante, String contato) {
         this.id = id;
         this.tipoDoAnuncio = tipoDoAnuncio;
         this.titulo = titulo;
         this.descricao = descricao;
         this.anunciante = anunciante;
         this.contato = contato;
-        this.imagemURL = imagemURL;
     }
 
     public String getTipoDoAnuncio() {
