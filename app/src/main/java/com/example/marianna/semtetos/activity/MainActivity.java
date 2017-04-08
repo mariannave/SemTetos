@@ -21,11 +21,12 @@ public class MainActivity extends AppCompatActivity {
         this.btnAnunciar = (Button) findViewById(R.id.btnAnunciar);
         this.btnAnuncios = (Button) findViewById(R.id.btnAnuncios);
         this.btnSobre = (Button) findViewById(R.id.btnSobre);
+
         this.btnSobre.setOnClickListener(new OnClickBotao());
         this.btnAnunciar.setOnClickListener(new OnClickBotao());
+        this.btnAnuncios.setOnClickListener(new OnClickBotao());
 
     }
-
 
 
     public class OnClickBotao implements View.OnClickListener {
@@ -37,6 +38,10 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(it);
             } else if(v.equals(MainActivity.this.btnAnunciar)) {
                 Intent it = new Intent(MainActivity.this, AnunciarActivity.class);
+                startActivity(it);
+
+            } else if(v.equals(MainActivity.this.btnAnuncios)) {
+                Intent it = new Intent(MainActivity.this, AnunciosActivity.class);
                 startActivity(it);
             }
         }

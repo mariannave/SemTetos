@@ -1,5 +1,7 @@
 package com.example.marianna.semtetos.model;
 
+import android.graphics.Bitmap;
+
 /**
  * Created by Marianna on 08/02/2017.
  */
@@ -13,6 +15,7 @@ public class Anuncio {
     private String anunciante;
     private String contato;
     private String imagemURL;
+    private Bitmap imagem;
 
 
     public Anuncio(String tipoDoAnuncio, String titulo, String descricao, String anunciante, String contato) {
@@ -80,4 +83,11 @@ public class Anuncio {
         this.imagemURL = imagemURL;
     }
 
+    public Bitmap getImagem() {
+        return imagem;
+    }
+
+    public void setImagem(Bitmap imagem) {
+        this.imagem = imagem;
+    }
 }

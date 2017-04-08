@@ -17,6 +17,7 @@
         </activity>
         <activity android:name=".activity.SobreActivity" />
         <activity android:name=".activity.AnunciarActivity" />
+        <activity android:name=".activity.AnunciosActivity" />
 
     </application>
 

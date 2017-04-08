@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/fotoAnuncio"
+        android:src="@mipmap/ic_launcher"
+        android:layout_width="0dp"
+        android:layout_weight="50"
+        android:layout_height="100dp" />
+
+
+    <TextView
+        android:padding="10dp"
+        android:textAlignment="textStart"
+        android:textSize="10pt"
+        android:textColor="@color/colorAccent"
+        android:id="@+id/anuncio_titulo_id"
+        android:layout_width="0dp"
+        android:layout_weight="50"
+        android:layout_height="100dp"/>
+</LinearLayout>
